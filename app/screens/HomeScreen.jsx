@@ -17,7 +17,7 @@ const Home = () => {
         }}
       >
         <Header />
-        {/* <SearchInput /> */}
+        <SearchInput />
       </View>
     </Screen>
   );
