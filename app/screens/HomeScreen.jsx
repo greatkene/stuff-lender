@@ -6,6 +6,7 @@ import Header from "../components/home/Header";
 import Screen from "../components/Screen";
 import SearchInput from "../components/home/SearchInput";
 import { COLORS } from "../utils/theme";
+import Category from "../components/home/Category";
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
       >
         <Header />
         <SearchInput />
+        <Category />
       </View>
     </Screen>
   );
