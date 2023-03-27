@@ -3,7 +3,8 @@ import React from "react";
 
 const Header = () => {
   return (
-    <View>
+    <View style={styles.wrapper}>
+      <Text>Header</Text>
       <Text>Header</Text>
     </View>
   );
@@ -11,4 +12,12 @@ const Header = () => {
 
 export default Header;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  wrapper: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    position: "absolute",
+    width: "100%",
+  },
+});

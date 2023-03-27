@@ -7,9 +7,9 @@ const Screen = ({ children, color }) => {
     <View
       style={{
         flex: 1,
-        paddingTop: Constants.statusBarHeight + 10,
-        paddingHorizontal: 20,
+        marginTop: Constants.statusBarHeight + 10,
         backgroundColor: color,
+        marginHorizontal: 25,
       }}
     >
       {children}
