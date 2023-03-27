@@ -31,9 +31,9 @@ export default function App() {
     return <View></View>;
   } else {
     return (
-      <View>
+      <>
         <HomeScreen />
-      </View>
+      </>
     );
   }
 }
