@@ -1,11 +1,12 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import React from "react";
+import AppText from "../../shared/AppText";
 
 const Header = () => {
   return (
     <View style={styles.wrapper}>
-      <Text>Header</Text>
-      <Text>Header</Text>
+      <AppText>Header</AppText>
+      <AppText>Header</AppText>
     </View>
   );
 };
