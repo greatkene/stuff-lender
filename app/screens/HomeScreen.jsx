@@ -9,7 +9,7 @@ import { COLORS } from "../utils/theme";
 import Category from "../components/home/Category";
 import ListingCard from "../components/home/ListingCard";
 
-const Home = () => {
+const HomeScreen = () => {
   return (
     <ScrollView>
       <Screen color={COLORS.secondary}>
@@ -33,6 +33,6 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomeScreen;
 
 const styles = StyleSheet.create({});

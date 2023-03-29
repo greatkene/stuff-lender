@@ -13,6 +13,7 @@ import {
   Spartan_800ExtraBold,
   Spartan_900Black,
 } from "@expo-google-fonts/spartan";
+import Router from "./app/routes/Router";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -32,7 +33,7 @@ export default function App() {
   } else {
     return (
       <>
-        <HomeScreen />
+        <Router />
       </>
     );
   }
