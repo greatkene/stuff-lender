@@ -11,5 +11,3 @@ const Router = () => {
 };
 
 export default Router;
-
-const styles = StyleSheet.create({});
