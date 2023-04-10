@@ -1,5 +1,6 @@
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import React from "react";
+import { withAuthenticator } from "aws-amplify-react-native";
 
 const ListingScreen = () => {
   return (
@@ -9,6 +10,6 @@ const ListingScreen = () => {
   );
 };
 
-export default ListingScreen;
+export default withAuthenticator(ListingScreen);
 
 const styles = StyleSheet.create({});

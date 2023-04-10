@@ -1,5 +1,7 @@
 import { StyleSheet, View } from "react-native";
-import HomeScreen from "./app/screens/HomeScreen";
+import { Amplify, Auth } from "aws-amplify";
+import awsconfig from "./src/aws-exports";
+Amplify.configure(awsconfig);
 
 import {
   useFonts,
