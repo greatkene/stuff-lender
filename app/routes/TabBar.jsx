@@ -32,7 +32,11 @@ const TabBar = ({ state, descriptors, navigation }) => {
             style={[styles.tabButton, isFocused && styles.tabButtonFocused]}
             onPress={onPress}
           >
-            <Text style={styles.tabLabel}>{label}</Text>
+            <Text
+              style={[styles.tabLabel, isFocused && styles.tabLabelFocused]}
+            >
+              {label}
+            </Text>
           </TouchableOpacity>
         );
       })}
@@ -46,9 +50,9 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     alignItems: "center",
     height: 60,
-    backgroundColor: "#fff",
+    backgroundColor: "#ffffff",
     borderTopWidth: 1,
-    borderTopColor: "#ddd",
+    borderTopColor: "#dddddd",
   },
   tabButton: {
     flex: 1,
@@ -57,12 +61,15 @@ const styles = StyleSheet.create({
   },
   tabButtonFocused: {
     borderBottomWidth: 3,
-    borderBottomColor: "#000",
+    borderBottomColor: "#000000",
   },
   tabLabel: {
     fontSize: 14,
     fontWeight: "bold",
-    color: "#333",
+    color: "#333333",
+  },
+  tabLabelFocused: {
+    color: "#000000",
   },
 });
 
