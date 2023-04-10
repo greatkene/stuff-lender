@@ -10,6 +10,11 @@
       "StackName": "amplify-lender-dev-181928",
       "StackId": "arn:aws:cloudformation:eu-north-1:163082412472:stack/amplify-lender-dev-181928/dd11f6d0-d7c3-11ed-afcc-0a80e7b99bd8",
       "AmplifyAppId": "d2ak8h0fu7xvjv"
+    },
+    "categories": {
+      "auth": {
+        "lender6aa5d79b": {}
+      }
     }
   }
 }
