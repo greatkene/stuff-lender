@@ -1,7 +1,11 @@
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Platform } from "react-native";
 import React from "react";
 import { withAuthenticator } from "aws-amplify-react-native";
 import { Auth } from "aws-amplify";
+import ImagePlaceHolder from "../components/listing/ImagePlaceHolder";
+import Category from "../components/listing/Category";
+import Screen from "../components/Screen";
+import { COLORS } from "../utils/theme";
 
 const ListingScreen = () => {
   Auth.currentAuthenticatedUser()
@@ -14,15 +18,23 @@ const ListingScreen = () => {
     });
 
   return (
-    <SafeAreaView>
-      <View>
-        <Text>Images</Text>
-        <Text>Category</Text>
+    <Screen color={COLORS.secondary}>
+      <View style={styles.container}>
+        <ImagePlaceHolder />
+        <Category />
+        <Text>Location</Text>
+        <Text>Title</Text>
+        <Text>Description</Text>
+        <Text>Value</Text>
       </View>
-    </SafeAreaView>
+    </Screen>
   );
 };
 
 export default withAuthenticator(ListingScreen);
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    marginVertical: Platform.OS === "ios" ? "1%" : "10%",
+  },
+});

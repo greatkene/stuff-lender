@@ -1,7 +1,12 @@
 import { StyleSheet, View } from "react-native";
-import { Amplify, Auth } from "aws-amplify";
+import { Amplify, Analytics, Auth } from "aws-amplify";
 import awsconfig from "./src/aws-exports";
-Amplify.configure(awsconfig);
+Amplify.configure({
+  ...awsconfig,
+  Analytics: {
+    disabled: true,
+  },
+});
 
 import {
   useFonts,
