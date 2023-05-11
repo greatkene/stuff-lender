@@ -6,6 +6,7 @@ import ImagePlaceHolder from "../components/listing/ImagePlaceHolder";
 import Category from "../components/listing/Category";
 import Screen from "../components/Screen";
 import { COLORS } from "../utils/theme";
+import AppTextInput from "../shared/forms/AppTextInput";
 
 const ListingScreen = () => {
   Auth.currentAuthenticatedUser()
@@ -22,8 +23,8 @@ const ListingScreen = () => {
       <View style={styles.container}>
         <ImagePlaceHolder />
         <Category />
-        <Text>Location</Text>
-        <Text>Title</Text>
+        <AppTextInput placeholder="Write a location" />
+        <AppTextInput placeholder="Title" />
         <Text>Description</Text>
         <Text>Value</Text>
       </View>
@@ -35,6 +36,7 @@ export default withAuthenticator(ListingScreen);
 
 const styles = StyleSheet.create({
   container: {
-    marginVertical: Platform.OS === "ios" ? "1%" : "10%",
+    marginVertical: Platform.OS === "ios" ? "1%" : "5%",
+    marginHorizontal: 20,
   },
 });
