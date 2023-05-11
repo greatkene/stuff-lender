@@ -1,5 +1,5 @@
-import { StyleSheet, Text, View, Platform } from "react-native";
-import React from "react";
+import { StyleSheet, View, Platform, ScrollView } from "react-native";
+import React, { useState, useEffect } from "react";
 import { withAuthenticator } from "aws-amplify-react-native";
 import { Auth } from "aws-amplify";
 import ImagePlaceHolder from "../components/listing/ImagePlaceHolder";
@@ -7,27 +7,42 @@ import Category from "../components/listing/Category";
 import Screen from "../components/Screen";
 import { COLORS } from "../utils/theme";
 import AppTextInput from "../shared/forms/AppTextInput";
+import AppButton from "../shared/forms/AppButton";
 
 const ListingScreen = () => {
-  Auth.currentAuthenticatedUser()
-    .then((user) => {
-      console.log(user.attributes.email);
-    })
-    .catch((err) => {
-      console.log(err);
-      throw err;
-    });
+  const [userEmail, setUserEmail] = useState("");
+
+  useEffect(() => {
+    const fetchUserEmail = async () => {
+      try {
+        const user = await Auth.currentAuthenticatedUser();
+        setUserEmail(user.attributes.email);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchUserEmail();
+  }, []);
 
   return (
     <Screen color={COLORS.secondary}>
-      <View style={styles.container}>
-        <ImagePlaceHolder />
-        <Category />
-        <AppTextInput placeholder="Write a location" />
-        <AppTextInput placeholder="Title" />
-        <Text>Description</Text>
-        <Text>Value</Text>
-      </View>
+      <ScrollView>
+        <View style={styles.container}>
+          <ImagePlaceHolder />
+          <Category placeholder="Select Category" />
+          <Category placeholder="Select Location" />
+          <AppTextInput placeholder="Title" />
+          <AppTextInput half placeholder="Add Value of stuff" />
+          <AppTextInput
+            multiline={true}
+            numberOfLines={10}
+            placeholder="Write a description"
+            textarea
+          />
+          <AppButton title="Post Advertisement" />
+        </View>
+      </ScrollView>
     </Screen>
   );
 };

@@ -2,6 +2,7 @@ import { Pressable, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { AntDesign } from "@expo/vector-icons";
 import AppText from "../../shared/AppText";
+import { SIZES } from "../../utils/theme";
 
 const ImagePlaceHolder = () => {
   return (
@@ -25,6 +26,6 @@ const styles = StyleSheet.create({
     width: 200,
     borderWidth: 1,
     borderStyle: "dashed",
-    borderRadius: 10,
+    borderRadius: SIZES.radius,
   },
 });

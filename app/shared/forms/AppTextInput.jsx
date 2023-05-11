@@ -5,11 +5,24 @@ import { SIZES, COLORS, FONTS } from "../../utils/theme";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import AppText from "../AppText";
 
-const AppTextInput = ({ icon, label, errors, half, ...otherProps }) => {
+const AppTextInput = ({
+  icon,
+  label,
+  errors,
+  half,
+  textarea,
+  ...otherProps
+}) => {
   return (
     <View style={[half && { width: "48%" }]}>
       <AppText style={{ ...FONTS.body5, color: COLORS.black }}>{label}</AppText>
-      <View style={[styles.container, half && styles.half]}>
+      <View
+        style={[
+          styles.container,
+          half && styles.half,
+          textarea && styles.textarea,
+        ]}
+      >
         {icon && (
           <MaterialCommunityIcons
             name={icon}
@@ -18,7 +31,10 @@ const AppTextInput = ({ icon, label, errors, half, ...otherProps }) => {
             style={styles.icon}
           />
         )}
-        <TextInput style={styles.text} {...otherProps} />
+        <TextInput
+          style={[styles.text, textarea && styles.textareaText]}
+          {...otherProps}
+        />
       </View>
 
       {errors}
@@ -34,16 +50,21 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: "100%",
     height: 50,
-    marginVertical: 5,
     paddingHorizontal: 12,
     borderWidth: 1.5,
     borderColor: COLORS.gray2,
     color: COLORS.black,
     backgroundColor: COLORS.white,
   },
+  textarea: {
+    height: 150,
+  },
   text: {
     ...FONTS.body4,
     width: 310,
+  },
+  textareaText: {
+    marginBottom: Platform.OS === "ios" ? 0 : 100,
   },
   icon: {
     marginRight: 10,
